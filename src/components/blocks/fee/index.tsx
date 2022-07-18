@@ -1,12 +1,13 @@
 import React from 'react';
 import styles from './style.module.scss'
 import clsx from 'clsx';
-import { FeeProps } from '../../../types';
+import { FeeProps } from 'types';
 
 const BlockFee = ({className, c14Fee, networkFee, totalFee, children }: FeeProps) => {
     return (
         <div className={clsx(styles['block-fee'], className)}>
             <span className={clsx(styles['block-fee__title'])}>{children}</span>
+
             <span className={clsx(styles['block-fee__box'])}>
                 <span className={clsx(styles['block-fee__subtitle'])}>Network Fee</span>
                 <span className={clsx(styles['block-fee__val'])}>{networkFee}</span>

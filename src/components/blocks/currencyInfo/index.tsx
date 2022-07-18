@@ -1,10 +1,10 @@
 import React, { useMemo } from 'react';
 import styles from './style.module.scss'
-import { BlockCurrencyInfoPropsType } from '../../../types'
+import { BlockCurrencyInfoPropsType } from 'types'
 import clsx from 'clsx';
 
-import img1 from '../../../assets/images/img-1.png'
-import img2 from '../../../assets/images/img-2.png'
+import img1 from 'assets/images/img-1.png'
+import img2 from 'assets/images/img-2.png'
 
 const BlockCurrencyInfo = ({sum, currency, name, changeVal, children}: BlockCurrencyInfoPropsType) => {
     const img = useMemo(() => name === 'target_amount' ? img1 : img2, [name])
@@ -26,7 +26,11 @@ const BlockCurrencyInfo = ({sum, currency, name, changeVal, children}: BlockCurr
                 className={styles['block-currency-info__currency']}
             >
                  {currency}
-                <img className={styles['block-currency-info__currency-img']} src={img} alt="Currency"/>
+                <img
+                    className={styles['block-currency-info__currency-img']}
+                    src={img}
+                    alt="Currency"
+                />
             </span>
         </article>
     );

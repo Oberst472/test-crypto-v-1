@@ -1,14 +1,14 @@
 import React, { ChangeEvent, useEffect, useState } from 'react';
 import clsx from 'clsx';
 import styles from './style.module.scss'
-import { InfoType, Info } from '../../../types';
+import { InfoType, Info } from 'types';
 
-import BlockCurrencyInfo from '../../blocks/currencyInfo';
-import BlockFee from '../../blocks/fee';
-import UiLoading from '../../ui/loading';
-import UiBtn from '../../ui/btn';
+import BlockCurrencyInfo from 'components/blocks/currencyInfo';
+import BlockFee from 'components/blocks/fee';
+import UiLoading from 'components/ui/loading';
+import UiBtn from 'components/ui/btn';
 
-import { apiGetInfo } from '../../../api';
+import { apiGetInfo } from 'api';
 
 const SectionCalculator = () => {
     const [info, setInfo] = useState(null as InfoType | null)
@@ -75,7 +75,7 @@ const SectionCalculator = () => {
 
             <BlockCurrencyInfo
                 sum={info?.target_amount}
-                currency={'USDC EVMOS'}
+                currency={'usdc evmos'}
                 name={'target_amount'}
                 changeVal={changeAmount}
             >

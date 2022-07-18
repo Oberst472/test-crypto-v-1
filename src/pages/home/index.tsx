@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './style.module.scss'
-import SectionCalculator from '../../components/sections/calculator';
+import SectionCalculator from 'components/sections/calculator';
 import clsx from 'clsx';
 
 const PageHome = () => {
