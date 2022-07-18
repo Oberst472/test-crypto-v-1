@@ -1,0 +1,21 @@
+.ui-btn {
+    background-color: #783AFF;
+    border-radius: 10px;
+    border: 0;
+    outline: none;
+    padding: 10px 0;
+    color: #ffffff;
+    width: 100%;
+    cursor: pointer;
+    transition-duration: 0.3s;
+    transition-property: background-color, border-radius;
+
+    &:hover {
+        background-color: rgba(120, 58, 255, 0.75);
+        border-radius: 6px;
+    }
+
+    &:active {
+        opacity: 0.6;
+    }
+}

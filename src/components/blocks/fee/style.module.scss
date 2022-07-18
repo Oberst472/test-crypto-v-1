@@ -1,0 +1,37 @@
+.block-fee {
+    background-color: rgba(51, 51, 75, 0.43);
+    border: 1px solid #33334B;
+    border-radius: 6px;
+    padding: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: #ffffff;
+    position: relative;
+
+    &__title {
+        top: -30px;
+        left: 0;
+        font-weight: 300;
+        position: absolute;
+    }
+
+    &__box {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__subtitle {
+        font-size: 14px;
+        line-height: 1;
+        opacity: 0.5;
+    }
+
+    &__val {
+    }
+
+    &__symbol {
+        font-weight: 700;
+        font-size: 30px;
+    }
+}
