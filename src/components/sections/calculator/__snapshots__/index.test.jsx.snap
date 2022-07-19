@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CALCULATOR TEST fetch info about currencies 1`] = `
+<button
+  class="ui-btn section-calculator__btn"
+>
+  Buy now
+</button>
+`;
