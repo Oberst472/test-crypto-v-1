@@ -1,0 +1,13 @@
+.l-block-item {
+    display: flex;
+    flex-direction: column;
+    &__title {
+        font-size: 14px;
+        line-height: 1;
+        opacity: 0.5;
+        margin-bottom: 5px;
+    }
+
+}
+
+

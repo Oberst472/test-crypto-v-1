@@ -9,25 +9,32 @@
     color: #ffffff;
     position: relative;
 
+    &:before {
+        content: '';
+        position: absolute;
+        height: 340%;
+        width: 2px;
+        background-color: #33334B;
+        left: -15px;
+    }
+
+    &:after {
+        content: '';
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        border: 2px solid #33334B;
+        border-radius: 50%;
+        background-color: #474767;
+        left: -20px;
+        top: -76%;
+    }
+
     &__title {
         top: -30px;
         left: 0;
         font-weight: 300;
         position: absolute;
-    }
-
-    &__box {
-        display: flex;
-        flex-direction: column;
-    }
-
-    &__subtitle {
-        font-size: 14px;
-        line-height: 1;
-        opacity: 0.5;
-    }
-
-    &__val {
     }
 
     &__symbol {
