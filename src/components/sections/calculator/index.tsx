@@ -23,11 +23,17 @@ const SectionCalculator = () => {
     const [throttle, setThrottle] = useState(null as any)
 
     useEffect(() => {
-        const d = async () => {
-            await getInfo({source_amount: '100.00'})
-            setIsOnceLoading(false)
+        const fetchInfo = async () => {
+            try {
+                await getInfo({source_amount: '100.00'})
+            } catch (e) {
+                console.error(e);
+                setErrorMessage('Error!')
+            } finally {
+                setIsOnceLoading(false)
+            }
         }
-        d()
+        fetchInfo()
     }, [])
 
     const getInfo = async function (info: Info): Promise<void | boolean> {
@@ -35,11 +41,9 @@ const SectionCalculator = () => {
         try {
             const res = await apiGetInfo(data)
             const resInfo = await res.json()
+
+            if (!res.ok) return setErrorMessage(resInfo.message)
             setInfo(resInfo)
-
-            const val = res.ok ? '' : resInfo.message
-            setErrorMessage(val)
-
         } catch (e) {
             console.log(e);
             setErrorMessage('Error!')
@@ -107,7 +111,7 @@ const SectionCalculator = () => {
                 in={isOnceLoading}
                 timeout={500} unmountOnExit
             >
-                {(state: string) => <UiLoading bg className={`ui-loading--${state}`} />}
+                {(state: string) => <UiLoading bg className={`ui-loading--${state}`} data-testid='main-loading'/>}
             </Transition>
         </section>
     );

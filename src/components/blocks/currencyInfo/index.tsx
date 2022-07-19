@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useEffect, useMemo, useRef } from 'react';
 import styles from './style.module.scss'
 import { BlockCurrencyInfoPropsType } from 'types'
 import clsx from 'clsx';
@@ -6,8 +6,14 @@ import clsx from 'clsx';
 import img1 from 'assets/images/img-1.png'
 import img2 from 'assets/images/img-2.png'
 
-const BlockCurrencyInfo = ({sum, currency, name, changeVal, children}: BlockCurrencyInfoPropsType) => {
+const BlockCurrencyInfo = ({sum, currency, name, changeVal, isFocus, children}: BlockCurrencyInfoPropsType) => {
     const img = useMemo(() => name === 'target_amount' ? img1 : img2, [name])
+    const inp = useRef(null)
+
+    useEffect(() => {
+        //@ts-ignore
+        if (isFocus && inp?.current) inp.current.focus()
+    }, [])
     return (
         <article className={clsx(styles['block-currency-info'])}>
             <span
@@ -18,6 +24,8 @@ const BlockCurrencyInfo = ({sum, currency, name, changeVal, children}: BlockCurr
 
             <input
                 className={clsx(styles['block-currency-info__amount'])}
+                type={'number'}
+                ref={inp}
                 value={sum || ''}
                 onChange={(e) => changeVal(e, name)}
             />

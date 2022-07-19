@@ -21,6 +21,7 @@ export type BlockCurrencyInfoPropsType = {
     currency: string
     name: string
     changeVal: Function
+    isFocus?: boolean
     children: string
 }
 

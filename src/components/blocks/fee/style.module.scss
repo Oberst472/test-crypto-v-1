@@ -12,7 +12,8 @@
     &:before {
         content: '';
         position: absolute;
-        height: 340%;
+        height: 300%;
+        top: -60px;
         width: 2px;
         background-color: #33334B;
         left: -15px;
@@ -33,7 +34,7 @@
     &__title {
         top: -30px;
         left: 0;
-        font-weight: 300;
+        font-weight: 700;
         position: absolute;
     }
 
